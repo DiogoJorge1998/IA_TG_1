@@ -5,7 +5,7 @@ public class main{
     public static void solver() {
         //Ler o estado inicial
         Scanner sc = new Scanner(System.in);
-        String initial = sc.nextLine();
+        String initialAA = sc.nextLine();
         sc.close(); 
 
 
@@ -14,6 +14,8 @@ public class main{
     }
 
 }
+
+//YAAAAA
 
 
 
