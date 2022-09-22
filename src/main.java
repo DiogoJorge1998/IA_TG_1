@@ -1,18 +1,19 @@
-import java.util.* ;
-
+import java.util.*;
 
 public class main{
-    Scanner scan = new Scanner(System.in);
-    
+
+    public static void solver() {
+        //Ler o estado inicial
+        Scanner sc = new Scanner(System.in);
+        String initial = sc.nextLine();
+        sc.close(); 
+
+
+        //
+
+    }
+
 }
-
-
-
-
-
-
-
-
 
 
 
