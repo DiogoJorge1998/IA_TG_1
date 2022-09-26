@@ -40,29 +40,30 @@ public class BestFirst {
             State n = (State) o;
             return this.state.equals(n.state);
         }
+    }
 
-        final private List<State> sucessores(State n) {
-            List<State> sucs = new ArrayList<>();
-            List<Ilayout> children = n.layout.children();
-            for (Ilayout e : children) {
-                if (n.father == null || !e.equals(n.father.layout)) {
-                    State nn = new State(e, n);
-                    sucs.add(nn);
-                }
+    final private List<State> sucessores(State n) {
+        List<State> sucs = new ArrayList<>();
+        List<Ilayout> children = n.layout.children();
+        for (Ilayout e : children) {
+            if (n.father == null || !e.equals(n.father.layout)) {
+                State nn = new State(e, n);
+                sucs.add(nn);
             }
-            return sucs;
         }
+        return sucs;
+    }
 
-        final public Iterator<State> solve(Ilayout s, Ilayout goal) {
-            objective = goal;
-            abertos = new PriorityQueue<>(10,
-                    (s1, s2) -> (int) Math.signum(s1.getG() - s2.getG()));
+    final public Iterator<State> solve(Ilayout s, Ilayout goal) {
+        objective = goal;
+        abertos = new PriorityQueue<>(10,
+                (s1, s2) -> (int) Math.signum(s1.getG() - s2.getG()));
 
-            fechados = new HashMap<>();
-            abertos.add(new State(s, null));
-            List<State> sucs;
-            // TO BE COMPLETED
+        fechados = new HashMap<>();
+        abertos.add(new State(s, null));
+        List<State> sucs;
+        // TO BE COMPLETED
 
-        }
     }
 }
+
