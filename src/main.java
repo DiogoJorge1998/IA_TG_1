@@ -1,3 +1,6 @@
+import models.BestFirst;
+import models.Board;
+
 import java.util.*;
 
 public class Main {
