@@ -65,4 +65,3 @@ public class BestFirst {
         return null;
     }
 }
-

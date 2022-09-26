@@ -2,6 +2,7 @@ package models;
 
 import services.Ilayout;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Board implements Ilayout, Cloneable {
@@ -44,8 +45,15 @@ public class Board implements Ilayout, Cloneable {
 
     @Override
     public boolean isGoal(Ilayout l) {
-        // TODO Auto-generated method stub
-        return false;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) {
+                if (this.board[i][j] != l.)
+            }
+        }
+        return l.equals(this);
     }
 
     @Override
