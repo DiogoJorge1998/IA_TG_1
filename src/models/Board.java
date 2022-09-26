@@ -1,6 +1,6 @@
 package models;
 
-public class Board implements Ilayout, Cloneable {
+class Board implements Ilayout, Cloneable {
     private static final int dim = 3;
     private int board[][];
 
@@ -21,11 +21,11 @@ public class Board implements Ilayout, Cloneable {
 
     public String toString() {
         String str = " ";
-        for(int i = 0; i < Board.dim; i++)
-            for(int j = 0; i < Board.dim; j++)
+        for(int i = 0; i < dim; i++)
+            for(int j = 0; i < dim; j++)
             {
                 str = (this.board[i][j]+"\t"+this.board[i][j+1]);
-                if(i == Board.dim && j == Board.dim) str = (this.board[i][j]+"\n");
+                if(i == dim && j == dim) str = (this.board[i][j]+"\n");
             }
         return str;
     }
@@ -44,7 +44,7 @@ public class Board implements Ilayout, Cloneable {
 
     @Override
     public double getG() {
-        // TODO Auto-generated method stub
+        
         return 0;
     }
 }
