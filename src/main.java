@@ -22,7 +22,7 @@ public class Main {
 
 /*
  * Best-first state-space search algorithm:
- * 
+ *
  * Criar estado initial a partir da config initial.
  * Criar a fila com prioridade abertos para estados ainda não testados;
  * Criar lista fechados para estados já testados;
