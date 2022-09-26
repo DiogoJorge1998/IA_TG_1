@@ -21,11 +21,30 @@ class Board implements Ilayout, Cloneable {
 
     public String toString() {
         String str = " ";
-        for(int i = 0; i < this.dim; i++)
-            for(int j = 0; i < this.dim; j++)
+        for(int i = 0; i < Board.dim; i++)
+            for(int j = 0; i < Board.dim; j++)
             {
                 str = (this.board[i][j]+"\t"+this.board[i][j+1]);
-                if(i == this.dim && j == this.dim) str = (this.board[i][j]+"\n");
+                if(i == Board.dim && j == Board.dim) str = (this.board[i][j]+"\n");
             }
+        return str;
+    }
+
+    @Override
+    public List<Ilayout> children() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public boolean isGoal(Ilayout l) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public double getG() {
+        // TODO Auto-generated method stub
+        return 0;
     }
 }
