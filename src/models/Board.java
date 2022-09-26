@@ -18,4 +18,14 @@ class Board implements Ilayout, Cloneable {
             for (int j = 0; j < dim; j++)
                 board[i][j] = Character.getNumericValue(str.charAt(si++));
     }
+
+    public String toString() {
+        String str = " ";
+        for(int i = 0; i < this.dim; i++)
+            for(int j = 0; i < this.dim; j++)
+            {
+                str = (this.board[i][j]+"\t"+this.board[i][j+1]);
+                if(i == this.dim && j == this.dim) str = (this.board[i][j]+"\n");
+            }
+    }
 }
