@@ -37,7 +37,7 @@ public class BestFirst {
             if (o == null) return false;
             if (this.getClass() != o.getClass()) return false;
             State n = (State) o;
-            return this.state.equals(n.state);
+            return this.equals(n);
         }
     }
 
@@ -62,7 +62,7 @@ public class BestFirst {
         abertos.add(new State(s, null));
         List<State> sucs;
         // TO BE COMPLETED
-
+        return null;
     }
 }
 
