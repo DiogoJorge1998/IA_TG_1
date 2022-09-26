@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class main{
+public class main {
 
     public static void solver() {
         //Ler o estado inicial
         Scanner sc = new Scanner(System.in);
         String initialAA = sc.nextLine();
-        sc.close(); 
+        sc.close();
 
 
         //
