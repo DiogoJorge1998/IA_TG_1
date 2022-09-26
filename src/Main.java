@@ -1,4 +1,4 @@
-import models.BestFirst;
+import services.BestFirst;
 import models.Board;
 
 import java.util.*;

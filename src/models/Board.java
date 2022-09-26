@@ -1,5 +1,7 @@
 package models;
 
+import services.Ilayout;
+
 import java.util.List;
 
 public class Board implements Ilayout, Cloneable {
