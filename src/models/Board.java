@@ -20,14 +20,16 @@ public class Board implements Ilayout, Cloneable {
     }
 
     public String toString() {
-        String str = " ";
-        for(int i = 0; i < Board.dim; i++)
-            for(int j = 0; i < Board.dim; j++)
-            {
-                str = (this.board[i][j]+"\t"+this.board[i][j+1]);
-                if(i == Board.dim && j == Board.dim) str = (this.board[i][j]+"\n");
+        StringBuilder str = new StringBuilder();
+        for(int i = 0; i < Board.dim; i++) {
+            for (int j = 0; i < Board.dim; j++) {
+                str.append(this.board[i][j]);
+                if (j < Board.dim - 1) break;
+                str.append("\t");
             }
-        return str;
+            str.append("\n");
+        }
+        return str.toString();
     }
 
     @Override
