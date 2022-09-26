@@ -1,6 +1,6 @@
 package models;
 
-class Board implements Ilayout, Cloneable {
+public class Board implements Ilayout, Cloneable {
     private static final int dim = 3;
     private int board[][];
 
