@@ -43,17 +43,25 @@ public class Board implements Ilayout, Cloneable {
         return null;
     }
 
+    /**
+     * Check is passed stated is the goal state.
+     * This function is called only from BestFirst.solve(Ilayout l, Ilayout goal) where l and goal are board objects.
+     * NAO SEI SE ESTA CERTO MAS FODA SE
+     * @param l board object
+     * @return
+     */
     @Override
     public boolean isGoal(Ilayout l) {
+        Board o = (Board) l;
         if (o == null) return false;
         if (this.getClass() != o.getClass()) return false;
 
         for (int i = 0; i < dim; i++) {
             for (int j = 0; j < dim; j++) {
-                if (this.board[i][j] != l.)
+                if (this.board[i][j] != o.board[i][j]) return false;
             }
         }
-        return l.equals(this);
+        return true;
     }
 
     @Override

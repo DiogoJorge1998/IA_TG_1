@@ -33,6 +33,11 @@ public class BestFirst {
             return toString().hashCode();
         }
 
+        /**
+         *
+         * @param o State object
+         * @return
+         */
         public boolean equals(Object o) {
             if (o == null) return false;
             if (this.getClass() != o.getClass()) return false;
