@@ -1,25 +1,21 @@
 package models;
 
-public class Board {
+class Board implements Ilayout, Cloneable {
+    private static final int dim = 3;
+    private int board[][];
 
-    private final int n; // number of rows/cols 
-    private final int[][] board;
-
-    public Board(String boardValues) {
-        this.n = (int) Math.sqrt(boardValues.length()); // Assuming given input will be dividable by three.
-        this.board = generateMatrix(boardValues);
+    public Board() {
+        board = new int[dim][dim];
     }
 
-    public int[][] generateMatrix(String board) {
-        int[][] result = new int[n][n];
-        int i = 0;
-        while (i <= n) {
-            for (int j = 0; j < n; j++)
-                result[i][j] = board.charAt(i + j);
-            i += n;
-        }
-        return result;
+    //Construtor//
+    public Board(String str) throws IllegalStateException {
+        if (str.length() != dim * dim)
+            throw new IllegalStateException("Invalid arg in Board constructor");
+        board = new int[dim][dim];
+        int si = 0;
+        for (int i = 0; i < dim; i++)
+            for (int j = 0; j < dim; j++)
+                board[i][j] = Character.getNumericValue(str.charAt(si++));
     }
-
-
 }
