@@ -8,7 +8,7 @@ public class BestFirst {
     private State actual;
     private Ilayout objective;
 
-    static class State {
+    public static class State {
         private Ilayout layout;
         private State father;
         private double g;
