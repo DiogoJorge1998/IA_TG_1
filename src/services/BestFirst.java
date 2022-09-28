@@ -85,3 +85,10 @@ public class BestFirst {
                 }
                 
             }
+        } catch (OutOfMemoryError error) {
+            System.out.println("error");
+            System.exit(-1);
+        }
+        return null;
+    }
+}
