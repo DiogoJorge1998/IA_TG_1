@@ -50,6 +50,19 @@ public class Board implements Ilayout, Cloneable {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board1 = (Board) o;
+        return Arrays.equals(board, board1.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(board);
+    }
+
+    @Override
     public List<Ilayout> children() {
         // TODO Auto-generated method stub
 
