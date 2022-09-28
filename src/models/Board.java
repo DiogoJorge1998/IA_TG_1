@@ -2,6 +2,7 @@ package models;
 
 import services.Ilayout;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Board implements Ilayout, Cloneable {
@@ -45,6 +46,19 @@ public class Board implements Ilayout, Cloneable {
         if (this.getClass() != o.getClass()) return false;
         Board n = (Board) o;
         return this.equals(n);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Board board1 = (Board) o;
+        return Arrays.equals(board, board1.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(board);
     }
 
     @Override
