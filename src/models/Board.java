@@ -1,5 +1,7 @@
 package models;
 
+import services.BestFirst;
+import services.BestFirst.State;
 import services.Ilayout;
 
 import java.util.List;
@@ -21,6 +23,10 @@ public class Board implements Ilayout, Cloneable {
         for (int i = 0; i < dim; i++)
             for (int j = 0; j < dim; j++)
                 board[i][j] = Character.getNumericValue(str.charAt(si++));
+    }
+
+    public int[][] getBoard() {
+        return board;
     }
 
     public String toString() {
@@ -63,9 +69,9 @@ public class Board implements Ilayout, Cloneable {
         return true;
     }
 
+
     @Override
     public double getG() {
-        
-        return 0;
+        return 1;
     }
 }
