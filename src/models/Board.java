@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Board implements Ilayout, Cloneable {
     private static final int dim = 3;
-    private int board[][];
+    private int[][] board;
 
     public Board() {
         board = new int[dim][dim];
@@ -26,10 +26,9 @@ public class Board implements Ilayout, Cloneable {
     public String toString() {
         StringBuilder str = new StringBuilder();
         for(int i = 0; i < Board.dim; i++) {
-            for (int j = 0; i < Board.dim; j++) {
-                str.append(this.board[i][j]);
-                if (j < Board.dim - 1) break;
-                str.append("\t");
+            for (int j = 0; j < Board.dim; j++) {
+                if (board[i][j] == 0) str.append(" ");
+                else str.append(this.board[i][j]);
             }
             str.append("\n");
         }
@@ -42,10 +41,26 @@ public class Board implements Ilayout, Cloneable {
         return null;
     }
 
+    /**
+     * Check is passed stated is the goal state.
+     * This function is called only from BestFirst.solve(Ilayout l, Ilayout goal) where l and goal are board objects.
+     * NAO SEI SE ESTA CERTO MAS FODA SE
+     * @param l board object
+     * @return Boolean represeting if goal as been reached.
+     */
     @Override
     public boolean isGoal(Ilayout l) {
-        // TODO Auto-generated method stub
-        return false;
+        // Type casting to board object
+        Board o = (Board) l;
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+
+        for (int i = 0; i < dim; i++) {
+            for (int j = 0; j < dim; j++) {
+                if (this.board[i][j] != o.board[i][j]) return false;
+            }
+        }
+        return true;
     }
 
     @Override
