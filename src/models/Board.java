@@ -40,6 +40,10 @@ public class Board implements Ilayout, Cloneable {
         return str.toString();
     }
 
+    public int hashCode() {
+
+    }
+
     @Override
     public List<Ilayout> children() {
         // TODO Auto-generated method stub
