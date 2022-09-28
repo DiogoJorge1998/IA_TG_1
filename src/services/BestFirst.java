@@ -21,16 +21,6 @@ public class BestFirst {
             else g = 0.0;
         }
 
-        //////////////////////////////////
-        public State getFather () {
-            return father;
-        }
-
-        public Ilayout getIlayout () {
-            return layout;
-        }
-        //////////////////////////////////
-
         public String toString() {
             return layout.toString();
         }
@@ -73,11 +63,6 @@ public class BestFirst {
         List<State> sucs;
         // TO BE COMPLETED
         return null;
-    }
-
-    //////////////////////////////////////////
-    public State getActualState(){
-        return actual;
     }
 }
 
