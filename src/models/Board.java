@@ -1,7 +1,5 @@
 package models;
 
-import services.BestFirst;
-import services.BestFirst.State;
 import services.Ilayout;
 
 import java.util.List;
@@ -36,7 +34,8 @@ public class Board implements Ilayout, Cloneable {
                 if (board[i][j] == 0) str.append(" ");
                 else str.append(this.board[i][j]);
             }
-            str.append("\n");
+            str.append(System.lineSeparator());
+            //str.append("\n");
         }
         return str.toString();
     }
@@ -44,13 +43,13 @@ public class Board implements Ilayout, Cloneable {
     @Override
     public List<Ilayout> children() {
         // TODO Auto-generated method stub
+
         return null;
     }
 
     /**
      * Check is passed stated is the goal state.
      * This function is called only from BestFirst.solve(Ilayout l, Ilayout goal) where l and goal are board objects.
-     * NAO SEI SE ESTA CERTO MAS FODA SE
      * @param l board object
      * @return Boolean represeting if goal as been reached.
      */
