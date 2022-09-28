@@ -18,18 +18,9 @@ public class BestFirst {
             father = n;
             if (father != null)
                 g = father.g + l.getG();
-            else g = 0.0;
+            else
+                g = 0.0;
         }
-
-        //////////////////////////////////
-        public State getFather () {
-            return father;
-        }
-
-        public Ilayout getIlayout () {
-            return layout;
-        }
-        //////////////////////////////////
 
         public String toString() {
             return layout.toString();
@@ -44,10 +35,12 @@ public class BestFirst {
         }
 
         public boolean equals(Object o) {
-            if (o == null) return false;
-            if (this.getClass() != o.getClass()) return false;
+            if (o == null)
+                return false;
+            if (this.getClass() != o.getClass())
+                return false;
             State n = (State) o;
-            return this.layout.equals(n.layout);
+            return this.equals(n);
         }
     }
 
@@ -71,13 +64,32 @@ public class BestFirst {
         fechados = new HashMap<>();
         abertos.add(new State(s, null));
         List<State> sucs;
-        // TO BE COMPLETED
+
+        try {
+
+            while (true) {
+                if (abertos.isEmpty()) {
+                    // printar erro;
+                }
+                actual = abertos.poll(); // Poll retrieves and removes the head of the list
+                if (actual.layout.isGoal(objective)) {
+                    // TO-DO: RETURNAR ITERADOR SOLUCAO; 
+                }
+                else {
+                    sucs =  sucessores(actual);
+                    fechados.put(actual.layout, actual);
+                    for (State cpy : sucs) {
+                        if (!fechados.containsKey(cpy.layout))
+                            abertos.add(cpy);
+                    }
+                }
+                
+            }
+
+        } catch (OutOfMemoryError error) {
+            System.out.println("Out of memory");
+            System.exit(-1);
+        }
         return null;
     }
-
-    //////////////////////////////////////////
-    public State getActualState(){
-        return actual;
-    }
 }
-
