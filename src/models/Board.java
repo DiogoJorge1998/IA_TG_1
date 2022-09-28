@@ -30,7 +30,8 @@ public class Board implements Ilayout, Cloneable {
                 if (board[i][j] == 0) str.append(" ");
                 else str.append(this.board[i][j]);
             }
-            str.append("\n");
+            str.append(System.lineSeparator());
+            //str.append("\n");
         }
         return str.toString();
     }
