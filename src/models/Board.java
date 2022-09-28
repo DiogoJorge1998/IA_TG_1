@@ -40,6 +40,13 @@ public class Board implements Ilayout, Cloneable {
         return str.toString();
     }
 
+    public boolean equals (Object o) {
+        if(o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        Board n = (Board) o;
+        return this.equals(n);
+    }
+
     @Override
     public List<Ilayout> children() {
         // TODO Auto-generated method stub
