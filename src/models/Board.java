@@ -62,7 +62,7 @@ public class Board implements Ilayout, Cloneable {
         original = original.replaceAll("(\\r|\\n)", "");
         int spaceIndex = (int)original.indexOf('0');
 
-        if (spaceIndex + 3 <= 9 && spaceIndex + 3 >= 0) { //down swap
+        if (spaceIndex + 3 <= 8 && spaceIndex + 3 >= 0) { //down swap
 
             char[] charOriginal = original.toCharArray();
             charOriginal[spaceIndex] = charOriginal[spaceIndex+3];
@@ -71,7 +71,7 @@ public class Board implements Ilayout, Cloneable {
             Board newChild = new Board(newChildString);
             finalList.add(newChild);
         }
-        if (spaceIndex - 3 <= 9 && spaceIndex - 3 >= 0) { //up swap
+        if (spaceIndex - 3 <= 8 && spaceIndex - 3 >= 0) { //up swap
 
             char[] charOriginal = original.toCharArray();
             charOriginal[spaceIndex] = charOriginal[spaceIndex-3];
