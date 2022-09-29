@@ -82,7 +82,7 @@ public class BestFirst {
                     return path.iterator();
                 }
                 else {
-                    sucs =  sucessores(actual);
+                    sucs = sucessores(actual);
                     fechados.put(actual.layout, actual);
                     for (State cpy : sucs) {
                         if (!fechados.containsKey(cpy.layout)) abertos.add(cpy);
