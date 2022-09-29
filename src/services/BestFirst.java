@@ -66,24 +66,28 @@ public class BestFirst {
         List<State> sucs;
 
         try {
-
             while (true) {
-                if (abertos.isEmpty()) {
-                    // printar erro;
-                }
+                if (abertos.isEmpty()) return null;
+
                 actual = abertos.poll(); // Poll retrieves and removes the head of the list
+
                 if (actual.layout.isGoal(objective)) {
-                    // TO-DO: RETURNAR ITERADOR SOLUCAO; 
+                    List<State> path = new ArrayList<>();
+                    State temp = actual;
+                    while (temp != null) {
+                        path.add(temp);
+                        temp = temp.father;
+                    }
+                    Collections.reverse(path);
+                    return path.iterator();
                 }
                 else {
                     sucs =  sucessores(actual);
                     fechados.put(actual.layout, actual);
                     for (State cpy : sucs) {
-                        if (!fechados.containsKey(cpy.layout))
-                            abertos.add(cpy);
+                        if (!fechados.containsKey(cpy.layout)) abertos.add(cpy);
                     }
                 }
-                
             }
         } catch (OutOfMemoryError error) {
             System.out.println("error");
