@@ -2,7 +2,6 @@ import models.Board;
 import services.Ilayout;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -92,7 +91,7 @@ public class PuzzleUnitTests {
         Board p2 = new Board("743602185");// possibility 2
         Board p3 = new Board("730642185");// possibility 3
         List<Ilayout> finalList = new ArrayList<Ilayout>();
-        finalList.add(p2); //Adicionar as possibilidades à lista final
+        finalList.add(p2); //Adicionar as possibilidades a lista final
         finalList.add(p3);
         finalList.add(p1);
         List<Ilayout> testList = i.children(); // correr o children e guardar numa lista
