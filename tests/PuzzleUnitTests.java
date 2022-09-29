@@ -1,5 +1,6 @@
 import models.Board;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -47,6 +48,36 @@ public class PuzzleUnitTests {
         assertFalse(b.isGoal(bSolved));
 
         Board b1 = new Board();
-        assertFalse(b.isGoal(bSolved));
+        assertFalse(b1.isGoal(bSolved));
+    }
+
+    @Test
+    public void testTrueEquals() {
+        Board b = new Board("123485670");
+        Board bSolved = new Board("123485670");
+
+        assertTrue(b.equals(bSolved));
+    }
+
+    @Test
+    public void testFalseEquals() {
+        Board b = new Board("123485670");
+        Board bSolved = new Board("023145678");
+
+        assertFalse(b.equals(bSolved));
+    }
+
+    @Test
+    public void testTrueHashCode() {
+        Board b = new Board("123485670");
+        Board bSolved = new Board("123485670");
+        assertEquals(b.hashCode(), bSolved.hashCode());
+    }
+    
+    @Test
+    public void testFalseHashCode() {
+        Board b = new Board("123485670");
+        Board bSolved = new Board("023145678");
+        assertEquals(b.hashCode(), bSolved.hashCode());
     }
 }
