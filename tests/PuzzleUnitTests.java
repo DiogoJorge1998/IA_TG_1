@@ -31,22 +31,4 @@ public class PuzzleUnitTests {
         pw.close();
     }
 
-    @Test
-    public void testTrueIsGoal() {
-        Board b = new Board("123485670");
-        Board bSolved = new Board("123485670");
-
-        assertTrue(b.isGoal(bSolved));
-    }
-
-    @Test
-    public void testFalseIsGoal() {
-        Board b = new Board("123485670");
-        Board bSolved = new Board("023145678");
-
-        assertFalse(b.isGoal(bSolved));
-
-        Board b1 = new Board();
-        assertFalse(b.isGoal(bSolved));
-    }
 }
