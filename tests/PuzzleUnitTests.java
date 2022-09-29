@@ -98,7 +98,7 @@ public class PuzzleUnitTests {
         List<Ilayout> testList = i.children(); // correr o children e guardar numa lista
 
         assertTrue(finalList.size() == testList.size());
-        //assertTrue(finalList.containsAll(testList) && testList.containsAll(finalList));
-        //assertEquals(finalList, testList);
+        assertTrue(finalList.containsAll(testList) && testList.containsAll(finalList));
+        assertEquals(finalList, testList);
     }
 }
