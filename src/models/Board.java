@@ -2,11 +2,7 @@ package models;
 
 import services.Ilayout;
 
-<<<<<<< Updated upstream
 import java.util.Arrays;
-=======
-import java.util.ArrayList;
->>>>>>> Stashed changes
 import java.util.List;
 
 public class Board implements Ilayout, Cloneable {
@@ -40,13 +36,11 @@ public class Board implements Ilayout, Cloneable {
                 else str.append(this.board[i][j]);
             }
             str.append(System.lineSeparator());
+            //str.append("\n");
         }
         return str.toString();
     }
 
-    /**
-     * Return a list of all the possible, not repeated children of a certain config
-     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,56 +56,9 @@ public class Board implements Ilayout, Cloneable {
 
     @Override
     public List<Ilayout> children() {
-<<<<<<< Updated upstream
         // TODO Auto-generated method stub
 
         return null;
-=======
-        List<Ilayout> finalList = new ArrayList<Ilayout>();// init list to return
-        String original = this.toString();
-        original = original.replace(" ","0");
-        original = original.replaceAll("(\\r|\\n)", "");
-        int spaceIndex = (int)original.indexOf('0');
-
-        if (spaceIndex + 3 <= 9 && spaceIndex + 3 >= 0) { //down swap
-
-            char[] charOriginal = original.toCharArray();
-            charOriginal[spaceIndex] = charOriginal[spaceIndex+3];
-            charOriginal[spaceIndex+3] = '0';
-            String newChildString = String.valueOf(charOriginal);
-            Board newChild = new Board("743602185");
-            finalList.add(newChild);
-        }
-        if (spaceIndex - 3 <= 9 && spaceIndex - 3 >= 0) { //up swap
-
-            char[] charOriginal = original.toCharArray();
-            charOriginal[spaceIndex] = charOriginal[spaceIndex-3];
-            charOriginal[spaceIndex-3] = '0';
-            String newChildString = String.valueOf(charOriginal);
-            Board newChild = new Board(newChildString);
-            finalList.add(newChild);
-        }
-        if (spaceIndex != 2 && spaceIndex != 5 && spaceIndex != 8) { //right swap
-
-            char[] charOriginal = original.toCharArray();
-            charOriginal[spaceIndex] = charOriginal[spaceIndex+1];
-            charOriginal[spaceIndex+1] = '0';
-            String newChildString = String.valueOf(charOriginal);
-            Board newChild = new Board(newChildString);
-            finalList.add(newChild);
-        }
-        if (spaceIndex != 0 && spaceIndex != 3 && spaceIndex != 6) { //left swap
-
-            char[] charOriginal = original.toCharArray();
-            charOriginal[spaceIndex] = charOriginal[spaceIndex-1];
-            charOriginal[spaceIndex-1] = '0';
-            String newChildString = String.valueOf(charOriginal);
-            Board newChild = new Board(newChildString);
-            finalList.add(newChild);
-        }
-
-        return finalList;
->>>>>>> Stashed changes
     }
 
     /**
